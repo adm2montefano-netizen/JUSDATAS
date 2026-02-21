@@ -89,6 +89,7 @@ const ProcessList: React.FC = () => {
   const getStatusStyle = (status: ProcessStatus) => {
     switch (status) {
       case 'Ativo': return 'bg-green-100 text-green-700 border-green-200';
+      case 'Em Andamento': return 'bg-indigo-100 text-indigo-700 border-indigo-200';
       case 'Recurso': return 'bg-blue-100 text-blue-700 border-blue-200';
       case 'Suspenso': return 'bg-orange-100 text-orange-700 border-orange-200';
       case 'Arquivado': return 'bg-gray-100 text-gray-700 border-gray-200';
@@ -128,7 +129,7 @@ const ProcessList: React.FC = () => {
             <Filter size={16} className="text-primary/60 shrink-0" />
             <span className="text-[10px] font-bold text-primary/60 uppercase tracking-widest whitespace-nowrap">Status</span>
           </div>
-          {['Todos', 'Ativo', 'Recurso', 'Suspenso', 'Arquivado'].map((s) => (
+          {['Todos', 'Ativo', 'Em Andamento', 'Recurso', 'Suspenso', 'Arquivado'].map((s) => (
             <button
               key={s}
               onClick={() => setFilter(s as any)}
@@ -339,6 +340,7 @@ const ProcessList: React.FC = () => {
                     onChange={e => setFormData({...formData, status: e.target.value as ProcessStatus})}
                   >
                     <option value="Ativo">Ativo</option>
+                    <option value="Em Andamento">Em Andamento</option>
                     <option value="Recurso">Recurso</option>
                     <option value="Suspenso">Suspenso</option>
                     <option value="Arquivado">Arquivado</option>

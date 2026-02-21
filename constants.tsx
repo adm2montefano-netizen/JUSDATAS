@@ -12,13 +12,25 @@ import {
   UserPlus, 
   Settings,
   Link2,
-  CreditCard
+  CreditCard,
+  Users,
+  Briefcase,
+  Receipt as ReceiptIcon,
+  ShoppingCart,
+  DollarSign,
+  TrendingUp
 } from 'lucide-react';
 import { Process, Deadline, Document, Note, CorrespondentDemand, CourtIntegration } from './types';
 
 export const NAV_ITEMS = [
   { id: 'dashboard', label: 'Dashboard', icon: <LayoutDashboard size={20} /> },
   { id: 'processes', label: 'Processos', icon: <Scale size={20} /> },
+  { id: 'clients', label: 'Clientes', icon: <Users size={20} /> },
+  { id: 'services', label: 'Serviços', icon: <Briefcase size={20} /> },
+  { id: 'financial', label: 'Financeiro', icon: <DollarSign size={20} /> },
+  { id: 'cashflow', label: 'Fluxo de Caixa', icon: <TrendingUp size={20} /> },
+  { id: 'receipts', label: 'Recibos', icon: <ReceiptIcon size={20} /> },
+  { id: 'purchases', label: 'Compras', icon: <ShoppingCart size={20} /> },
   { id: 'deadlines', label: 'Prazos', icon: <Clock size={20} /> },
   { id: 'documents', label: 'Documentos', icon: <FileText size={20} /> },
   { id: 'comparative', label: 'Direito Comparado', icon: <Globe size={20} /> },

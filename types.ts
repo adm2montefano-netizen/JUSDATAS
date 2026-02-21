@@ -1,5 +1,5 @@
 
-export type ProcessStatus = 'Ativo' | 'Arquivado' | 'Suspenso' | 'Recurso';
+export type ProcessStatus = 'Ativo' | 'Em Andamento' | 'Arquivado' | 'Suspenso' | 'Recurso';
 export type Priority = 'Baixa' | 'Média' | 'Alta' | 'Urgente';
 
 export interface Process {
@@ -75,4 +75,50 @@ export interface Invoice {
   amount: number;
   status: 'Pago' | 'Pendente' | 'Cancelado';
   downloadUrl: string;
+}
+
+export interface Client {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  document: string; // CPF/CNPJ
+  address: string;
+  createdAt: string;
+}
+
+export interface Service {
+  id: string;
+  name: string;
+  description: string;
+  fee: number;
+  category: string;
+}
+
+export interface Receipt {
+  id: string;
+  clientName: string;
+  amount: number;
+  date: string;
+  description: string;
+  serviceId?: string;
+}
+
+export interface Purchase {
+  id: string;
+  supplier: string;
+  description: string;
+  amount: number;
+  date: string;
+  category: string;
+}
+
+export interface FinancialTransaction {
+  id: string;
+  type: 'Receita' | 'Despesa';
+  description: string;
+  amount: number;
+  date: string;
+  category: string;
+  status: 'Pago' | 'Pendente';
 }

@@ -17,7 +17,13 @@ import {
   UserPlus,
   Link2,
   CreditCard,
-  LogOut
+  LogOut,
+  Users,
+  Briefcase,
+  Receipt as ReceiptIcon,
+  ShoppingCart,
+  TrendingUp,
+  DollarSign
 } from 'lucide-react';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
@@ -32,6 +38,12 @@ import NotesManager from './components/NotesManager';
 import Integrations from './components/Integrations';
 import Subscription from './components/Subscription';
 import LandingPage from './components/LandingPage';
+import ClientManager from './components/ClientManager';
+import ServiceManager from './components/ServiceManager';
+import FinancialManager from './components/FinancialManager';
+import CashFlow from './components/CashFlow';
+import ReceiptManager from './components/ReceiptManager';
+import PurchaseManager from './components/PurchaseManager';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -81,6 +93,12 @@ const App: React.FC = () => {
       case 'notes': return <NotesManager />;
       case 'integrations': return <Integrations />;
       case 'subscription': return <Subscription />;
+      case 'clients': return <ClientManager />;
+      case 'services': return <ServiceManager />;
+      case 'financial': return <FinancialManager />;
+      case 'cashflow': return <CashFlow />;
+      case 'receipts': return <ReceiptManager />;
+      case 'purchases': return <PurchaseManager />;
       default: return <Dashboard />;
     }
   };
@@ -212,6 +230,12 @@ const App: React.FC = () => {
               {[
                 { id: 'dashboard', label: 'Dashboard', icon: <LayoutDashboard size={20} /> },
                 { id: 'processes', label: 'Processos', icon: <Scale size={20} /> },
+                { id: 'clients', label: 'Clientes', icon: <Users size={20} /> },
+                { id: 'services', label: 'Serviços', icon: <Briefcase size={20} /> },
+                { id: 'financial', label: 'Financeiro', icon: <DollarSign size={20} /> },
+                { id: 'cashflow', label: 'Fluxo de Caixa', icon: <TrendingUp size={20} /> },
+                { id: 'receipts', label: 'Recibos', icon: <ReceiptIcon size={20} /> },
+                { id: 'purchases', label: 'Compras', icon: <ShoppingCart size={20} /> },
                 { id: 'deadlines', label: 'Prazos', icon: <Clock size={20} /> },
                 { id: 'documents', label: 'Documentos', icon: <FileText size={20} /> },
                 { id: 'ai', label: 'IA Agente', icon: <MessageSquare size={20} /> },
