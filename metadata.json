@@ -1,0 +1,8 @@
+{
+  "name": "JUSDATAS - Plataforma Jurídica Inteligente",
+  "description": "Uma plataforma jurídica completa para advogados e escritórios, integrando gestão de processos, prazos, documentos e inteligência artificial avançada.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
