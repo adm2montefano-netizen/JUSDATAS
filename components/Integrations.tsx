@@ -6,15 +6,14 @@ import {
   ShieldCheck, 
   RefreshCcw, 
   CheckCircle2, 
-  AlertCircle, 
-  ChevronRight,
   Info,
-  ExternalLink,
   Zap,
   Globe
 } from 'lucide-react';
 import { BRAZIL_STATES, MOCK_INTEGRATIONS } from '../constants';
 import { CourtIntegration } from '../types';
+
+const generateId = () => Math.random().toString(36).substr(2, 9);
 
 const Integrations: React.FC = () => {
   const [integrations, setIntegrations] = useState<CourtIntegration[]>(MOCK_INTEGRATIONS);
@@ -35,7 +34,7 @@ const Integrations: React.FC = () => {
       setIntegrations(prev => prev.map(i => i.state === stateAcr ? { ...i, isActive: !i.isActive } : i));
     } else {
       const newInt: CourtIntegration = {
-        id: Math.random().toString(36).substr(2, 9),
+        id: generateId(),
         state: stateAcr,
         court: `TJ${stateAcr}`,
         isActive: true,

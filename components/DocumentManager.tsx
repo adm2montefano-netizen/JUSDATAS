@@ -1,13 +1,11 @@
 
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo } from 'react';
 import { 
   FileText, 
   Folder, 
   Search, 
   Plus, 
   Upload, 
-  MoreVertical, 
-  Eye, 
   FileSearch, 
   Loader2, 
   X, 
@@ -20,7 +18,6 @@ import {
   AlertCircle,
   Clock,
   HardDrive,
-  // Fix: Adding missing icon imports
   CheckCircle2,
   Sparkles
 } from 'lucide-react';
@@ -85,7 +82,7 @@ const DocumentManager: React.FC = () => {
     try {
       const result = await getLegalAdvice(`Analise este documento jurídico chamado "${doc.name}". Extraia os nomes das partes, o número do processo (se houver), os valores envolvidos e faça um resumo executivo dos pontos críticos para o advogado.`);
       alert(`Extração JUSDATAS AI (OCR Inteligente):\n\n${result}`);
-    } catch (error) {
+    } catch {
       alert('Erro ao processar OCR via motor Gemini.');
     } finally {
       setOcrLoading(null);
@@ -330,7 +327,7 @@ const DocumentManager: React.FC = () => {
                   <select 
                     className="w-full px-5 py-4 rounded-2xl bg-secondary/30 border border-transparent focus:border-primary/30 focus:bg-white outline-none transition-all text-sm font-bold text-gray-700 appearance-none cursor-pointer"
                     value={uploadData.type}
-                    onChange={e => setUploadData({...uploadData, type: e.target.value as any})}
+                    onChange={e => setUploadData({...uploadData, type: e.target.value as Document['type']})}
                   >
                     <option value="PDF">Documento PDF</option>
                     <option value="DOCX">Microsoft Word (DOCX)</option>

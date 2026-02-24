@@ -50,7 +50,7 @@ const INVOICES: Invoice[] = [
 ];
 
 const Subscription: React.FC = () => {
-  const [activePlanId, setActivePlanId] = useState('p2');
+  const [activePlanId] = useState('p2');
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
 
   const activePlan = PLANS.find(p => p.id === activePlanId);

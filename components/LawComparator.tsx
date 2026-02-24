@@ -4,7 +4,6 @@ import {
   Globe, 
   Search, 
   ArrowRightLeft, 
-  FileText, 
   Sparkles, 
   Download, 
   Copy, 

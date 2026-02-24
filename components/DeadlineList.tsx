@@ -120,7 +120,7 @@ const DeadlineList: React.FC = () => {
           {['Todos', 'Urgente', 'Alta', 'Média', 'Baixa'].map((p) => (
             <button
               key={p}
-              onClick={() => setFilter(p as any)}
+              onClick={() => setFilter(p as Priority | 'Todos')}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
                 filter === p 
                   ? 'bg-primary text-white border-primary shadow-md transform scale-105' 

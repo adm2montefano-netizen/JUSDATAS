@@ -1,10 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   Menu, 
   X, 
   Bell, 
-  User, 
   Search,
   LayoutDashboard,
   Scale,
@@ -37,7 +36,6 @@ import Agenda from './components/Agenda';
 import NotesManager from './components/NotesManager';
 import Integrations from './components/Integrations';
 import Subscription from './components/Subscription';
-import LandingPage from './components/LandingPage';
 import ClientManager from './components/ClientManager';
 import ServiceManager from './components/ServiceManager';
 import FinancialManager from './components/FinancialManager';
@@ -48,37 +46,16 @@ import PurchaseManager from './components/PurchaseManager';
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  // Verificação de autenticação ao carregar o app
-  useEffect(() => {
-    const auth = localStorage.getItem('jusdatas_auth');
-    if (auth === 'true') {
-      setIsAuthenticated(true);
-    }
-  }, []);
-
-  const handleLogin = () => {
-    setIsAuthenticated(true);
-    localStorage.setItem('jusdatas_auth', 'true');
-    setActiveTab('dashboard');
-  };
 
   const handleLogout = () => {
     // Diálogo de confirmação para evitar cliques acidentais
     if (confirm('Deseja realmente encerrar sua sessão na plataforma JUSDATAS?')) {
-      setIsAuthenticated(false);
-      localStorage.removeItem('jusdatas_auth');
       setIsMobileMenuOpen(false);
-      // Redireciona para o topo da landing page ao deslogar
+      setActiveTab('dashboard');
+      // Redireciona para o topo ao "deslogar"
       window.scrollTo(0, 0);
     }
   };
-
-  // Se não estiver autenticado, exibe apenas a Landing Page
-  if (!isAuthenticated) {
-    return <LandingPage onLogin={handleLogin} />;
-  }
 
   const renderContent = () => {
     switch (activeTab) {

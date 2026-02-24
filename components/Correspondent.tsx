@@ -1,11 +1,10 @@
 
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo } from 'react';
 import { 
   UserPlus, 
   Wallet, 
   FileCheck, 
   ExternalLink, 
-  MoreVertical, 
   Plus, 
   X, 
   Check, 
@@ -13,11 +12,9 @@ import {
   Briefcase, 
   Trash2,
   AlertCircle,
-  TrendingUp,
   Star,
   Printer,
-  FileDown,
-  ChevronRight
+  FileDown
 } from 'lucide-react';
 import { MOCK_DEMANDS } from '../constants';
 import { CorrespondentDemand } from '../types';
@@ -116,10 +113,10 @@ const Correspondent: React.FC = () => {
               <Briefcase size={20} className="text-primary" /> Demandas Ativas
             </h3>
             <div className="flex bg-white p-1 rounded-xl border border-gray-100 shadow-sm">
-              {['Todas', 'Pendente', 'Concluída', 'Paga'].map(s => (
-                <button
-                  key={s}
-                  onClick={() => setFilter(s as any)}
+                  {['Todas', 'Pendente', 'Concluída', 'Paga'].map(s => (
+                    <button
+                      key={s}
+                      onClick={() => setFilter(s as CorrespondentDemand['status'] | 'Todas')}
                   className={`px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all ${
                     filter === s ? 'bg-primary text-white' : 'text-gray-400 hover:text-primary'
                   }`}

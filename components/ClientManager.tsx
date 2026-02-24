@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Plus, Search, User, Mail, Phone, FileText, MapPin, X, Check, Trash2 } from 'lucide-react';
+import { Plus, Search, User, Mail, Phone, MapPin, X, Check, Trash2 } from 'lucide-react';
 import { Client } from '../types';
 
 const ClientManager: React.FC = () => {

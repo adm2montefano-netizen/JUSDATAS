@@ -10,7 +10,6 @@ import {
   Calendar, 
   StickyNote, 
   UserPlus, 
-  Settings,
   Link2,
   CreditCard,
   Users,

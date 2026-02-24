@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Plus, DollarSign, ArrowUpCircle, ArrowDownCircle, Search, X, Check, Trash2, Filter } from 'lucide-react';
+import { Plus, ArrowUpCircle, ArrowDownCircle, X, Check, Trash2 } from 'lucide-react';
 import { FinancialTransaction } from '../types';
 
 const FinancialManager: React.FC = () => {
@@ -64,7 +64,7 @@ const FinancialManager: React.FC = () => {
         {['Todos', 'Receita', 'Despesa'].map(type => (
           <button
             key={type}
-            onClick={() => setFilter(type as any)}
+            onClick={() => setFilter(type as 'Todos' | 'Receita' | 'Despesa')}
             className={`px-6 py-2 rounded-xl text-xs font-bold transition-all ${
               filter === type ? 'bg-primary text-white shadow-md' : 'text-gray-400 hover:bg-gray-50'
             }`}
@@ -206,7 +206,7 @@ const FinancialManager: React.FC = () => {
                   <select 
                     className="w-full px-5 py-4 rounded-2xl bg-secondary/30 border border-transparent focus:border-primary/30 focus:bg-white outline-none transition-all text-sm font-bold text-gray-700 appearance-none cursor-pointer"
                     value={formData.status}
-                    onChange={e => setFormData({...formData, status: e.target.value as any})}
+                    onChange={e => setFormData({...formData, status: e.target.value as FinancialTransaction['status']})}
                   >
                     <option value="Pago">Pago</option>
                     <option value="Pendente">Pendente</option>

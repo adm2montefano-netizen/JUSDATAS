@@ -11,14 +11,12 @@ import {
   X, 
   Check, 
   Video, 
-  Briefcase,
   AlertCircle,
   RefreshCcw,
   ExternalLink,
   Trash2,
   CalendarCheck2
 } from 'lucide-react';
-import { MOCK_PROCESSES } from '../constants';
 
 interface Event {
   id: string;
@@ -379,7 +377,7 @@ const Agenda: React.FC = () => {
                   <select 
                     className="w-full px-5 py-4 rounded-2xl bg-secondary/30 border border-transparent focus:border-primary/30 focus:bg-white outline-none transition-all text-sm font-bold text-gray-700 appearance-none cursor-pointer"
                     value={newEvent.type}
-                    onChange={e => setNewEvent({...newEvent, type: e.target.value as any})}
+                    onChange={e => setNewEvent({...newEvent, type: e.target.value as Event['type']})}
                   >
                     <option value="Audiência">⚖️ Audiência</option>
                     <option value="Reunião">🤝 Reunião</option>

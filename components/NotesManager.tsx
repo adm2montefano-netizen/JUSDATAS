@@ -11,8 +11,7 @@ import {
   Check, 
   Tag, 
   Calendar,
-  AlertCircle,
-  Hash
+  AlertCircle
 } from 'lucide-react';
 import { MOCK_NOTES } from '../constants';
 import { Note } from '../types';

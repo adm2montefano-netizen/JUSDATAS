@@ -13,7 +13,15 @@ const data = [
   { name: 'Sex', qty: 6 },
 ];
 
-const StatCard = ({ icon, label, value, color, trend }: any) => (
+interface StatCardProps {
+  icon: React.ReactNode;
+  label: string;
+  value: string | number;
+  color: string;
+  trend?: string;
+}
+
+const StatCard: React.FC<StatCardProps> = ({ icon, label, value, color, trend }) => (
   <div className="bg-white p-6 rounded-[32px] shadow-sm border border-gray-100 flex flex-col gap-3 hover:shadow-xl transition-all group">
     <div className="flex justify-between items-start">
       <div className={`${color} w-12 h-12 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform`}>

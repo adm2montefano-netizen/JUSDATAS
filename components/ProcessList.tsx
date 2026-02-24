@@ -4,7 +4,6 @@ import {
   Search, 
   Filter, 
   Plus, 
-  MoreVertical, 
   Scale, 
   X, 
   Check, 
@@ -15,8 +14,6 @@ import {
   AlertCircle,
   ExternalLink,
   Trash2,
-  ChevronRight,
-  // Add missing Users icon import
   Users
 } from 'lucide-react';
 import { MOCK_PROCESSES } from '../constants';
@@ -132,7 +129,7 @@ const ProcessList: React.FC = () => {
           {['Todos', 'Ativo', 'Em Andamento', 'Recurso', 'Suspenso', 'Arquivado'].map((s) => (
             <button
               key={s}
-              onClick={() => setFilter(s as any)}
+              onClick={() => setFilter(s as ProcessStatus | 'Todos')}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
                 filter === s 
                   ? 'bg-primary text-white border-primary shadow-md transform scale-105' 
