@@ -39,7 +39,7 @@ const LawComparator: React.FC = () => {
     try {
       const comparison = await getComparativeLaw(activeTheme, [country]);
       setResult(comparison || 'Nenhum resultado detalhado pôde ser gerado no momento.');
-    } catch (error) {
+    } catch {
       setResult('Erro ao conectar com o motor de IA. Por favor, tente novamente.');
     } finally {
       setLoading(false);

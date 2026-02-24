@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { 
   CreditCard, 
-  Check, 
   Zap, 
   History, 
   ShieldCheck, 

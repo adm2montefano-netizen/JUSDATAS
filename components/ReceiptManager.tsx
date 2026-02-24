@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Plus, Receipt as ReceiptIcon, User, DollarSign, Calendar, FileText, X, Check, Trash2, Download } from 'lucide-react';
+import { Plus, Receipt as ReceiptIcon, User, DollarSign, Calendar, X, Check, Trash2, Download } from 'lucide-react';
 import { Receipt } from '../types';
 
 const ReceiptManager: React.FC = () => {

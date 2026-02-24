@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Plus, ShoppingCart, Tag, DollarSign, Calendar, X, Check, Trash2, Building2 } from 'lucide-react';
+import { Plus, ShoppingCart, X, Check, Trash2, Building2 } from 'lucide-react';
 import { Purchase } from '../types';
 
 const PurchaseManager: React.FC = () => {

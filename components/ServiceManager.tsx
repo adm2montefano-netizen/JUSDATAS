@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Plus, Briefcase, DollarSign, Tag, X, Check, Trash2 } from 'lucide-react';
+import { Plus, Briefcase, DollarSign, X, Check, Trash2 } from 'lucide-react';
 import { Service } from '../types';
 
 const ServiceManager: React.FC = () => {
